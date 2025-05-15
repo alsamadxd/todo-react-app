@@ -71,11 +71,13 @@ function App() {
       <NavBar />
       <div className="mx-3 lg:container lg:mx-auto md:mx-5 my-5 rounded-xl bg-slate-300 p-5 min-h-[80vh] lg:w-1/2">
         <h1 className="font-bold text-center text-xl">
-          <span className="bg-slate-800 p-1 text-white rounded-2xl mx-2">✏️iList </span> - Manage all
-          your todos at one Place
+          <span className="bg-slate-800 p-1 text-white rounded-2xl mx-2">
+            ✏️iList{" "}
+          </span>{" "}
+          - Manage all your todos at one Place
         </h1>
         <div className="addTodo flex flex-col gap-5 my-6">
-          <h2 className="text-lg font-bold"> Add a Todo</h2>
+          <h2 className="text-lg font-bold md:text-2xl"> Add a Todo</h2>
           <input
             name={todo.id}
             onChange={handleChange}
@@ -96,9 +98,13 @@ function App() {
           type="checkbox"
           checked={showfinished}
           className="my-3"
+          id="show"
         />{" "}
-        Show Finished
-        <h2 className="font-bold text-lg">Your Todos</h2>
+        <label className="mx-2" htmlFor="show">
+          Show Finished
+        </label>
+        <div className="h-[1px] bg-black opacity-55 my-2"></div>
+        <h2 className="font-bold text-lg md:text-2xl">Your Todos</h2>
         <div className="todos">
           {todos.length === 0 && <div className="m-5">No Todos to display</div>}
           {todos.map((item) => {
